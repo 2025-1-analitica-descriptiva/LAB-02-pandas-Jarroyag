@@ -27,11 +27,11 @@ def pregunta_11():
      
      # Agrupa por 'c0', ordena 'c4' y concatena los valores separados por ','
     result = (
-          df.sort_values(['c0', 'c4'])
-            .groupby('c0')['c4']
-            .apply(lambda x: ','.join(map(str, x)))
-            .to_frame()
-     )
-     
+        df.sort_values(['c0', 'c4'])
+          .groupby('c0')['c4']
+          .apply(lambda x: ','.join(map(str, x)))
+          .reset_index()
+    )
+    
     return result
 print(pregunta_11())

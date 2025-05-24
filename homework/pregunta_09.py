@@ -26,9 +26,9 @@ def pregunta_09():
   
     df = pd.read_csv("files/input/tbl0.tsv", sep='\t')
 
-    # Convierte la columna 'c3' a tipo datetime y extrae el año
-    df['year'] = pd.to_datetime(df['c3']).dt.year
+    # Extrae el año como string (sin convertir a int)
+    df['year'] = df['c3'].str[:4]
 
-    # Devuelve el resultado
     return df
+
 print(pregunta_09())
